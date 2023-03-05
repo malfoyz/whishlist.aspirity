@@ -1,0 +1,30 @@
+{
+  "name": "whishlist.aspirity",
+  "version": "1.0.0",
+  "description": "ТЗ Аспирити 2023",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malfoyz/whishlist.aspirity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malfoyz/whishlist.aspirity/issues"
+  },
+  "homepage": "https://github.com/malfoyz/whishlist.aspirity#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.15.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.21",
+    "pg": "^8.9.0"
+  }
+}
