@@ -2,7 +2,7 @@ import db from '../db.js'
 
 class WishController {
     async createWish(req, res) {
-        const {content, priority} = req.body
+        const {content, priority, image_url} = req.body
         const newWish = await db.query('INSERT INTO wish (content, priority) values ($1, $2) RETURNING *', [content, priority])
         res.json(newWish.rows[0])
     }
@@ -16,9 +16,9 @@ class WishController {
         res.json(wish.rows[0])
     }
     async updateWish(req, res) {
-        const {id, content, image_url, priority, created, is_happened } = req.body
-        const wish = await db.query('UPDATE wish SET content = $1, image_url = $2, priority = $3, is_happened = $4' + 
-                                    'WHERE id = $5 RETURNING *', [content, image_url, priority, is_happened, id])
+        const {id, content, image_url, priority, created } = req.body
+        const wish = await db.query('UPDATE wish SET content = $1, image_url = $2, priority = $3' + 
+                                    'WHERE id = $4 RETURNING *', [content, image_url, priority, id])
         res.json(wish.rows[0])
     }
     async deleteWish(req, res) {
